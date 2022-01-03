@@ -1,0 +1,25 @@
+// Данный небольшой скрипт создан для упрошения зодания кастомных тотемов в игре Minecraft
+// This small script was created to simplify the building of custom totems in the game Minecraft
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <iterator>
+#include <cctype>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru"); // Локализация
+	string name; // Ник игрока
+	string s; // Ник игрока строчным 
+	cout << "Введиде ник игрока: "; 
+	cin >> name;
+	transform(name.begin(), name.end(), back_inserter(s), tolower); // Преоброзование ника
+	cout << "matchItems=totem_of_undying" << endl;
+	cout << "tile=" << s << endl;
+	cout << "nbt.display.Name=" << name << endl;
+	return 0;
+}
